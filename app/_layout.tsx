@@ -1,39 +1,70 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { Colors } from "@/constants/Colors";
+import { tokenCache } from "@/utils/cache";
+import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
+import { router, Stack, usePathname, useSegments } from "expo-router";
+import { useEffect } from "react";
+import { ActivityIndicator, LogBox, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Toaster } from "sonner-native";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+LogBox.ignoreLogs(["Clerk: Clerk has been laoded with development keys"]);
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+if (!publishableKey) {
+  throw new Error(
+    "Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env"
+  );
+}
+
+const InitialLayout = () => {
+  const { isLoaded, isSignedIn } = useAuth();
+  const segments = useSegments();
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+    if (!isLoaded) return;
 
-  if (!loaded) {
-    return null;
+    const isAuthGroup = segments[0] === "(authenticated)";
+
+    if (isSignedIn && !isAuthGroup) {
+      router.replace("/(authenticated)/(tabs)/today");
+    } else if (!isSignedIn && pathname !== "/") {
+      router.replace("/");
+    }
+  }, [isLoaded, isSignedIn]);
+
+  if (!isLoaded) {
+    return (
+      <View
+        style={{ flex: 1, justifyContent: "center", alignContent: "center" }}
+      >
+        <ActivityIndicator size="large" color={Colors.primary} />
+      </View>
+    );
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: Colors.background },
+      }}
+    >
+      <Stack.Screen name="index" />
+    </Stack>
+  );
+};
+
+export default function RootLayout() {
+  return (
+    <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
+      <ClerkLoaded>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Toaster />
+          <InitialLayout />
+        </GestureHandlerRootView>
+      </ClerkLoaded>
+    </ClerkProvider>
   );
 }
