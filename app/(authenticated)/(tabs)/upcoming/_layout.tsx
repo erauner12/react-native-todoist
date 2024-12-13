@@ -8,7 +8,7 @@ const UpcomingLayout = () => {
         name="index"
         options={{
           title: "Upcoming",
-          headerRight: () => <MoreButton />,
+          headerRight: () => <MoreButton pageName="Upcoming" />,
         }}
       />
     </Stack>
