@@ -8,9 +8,9 @@ import { drizzle, useLiveQuery } from "drizzle-orm/expo-sqlite";
 import { useRouter } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Animated, { LinearTransition } from "react-native-reanimated";
 import * as ContextMenu from "zeego/context-menu";
 
-import { FlatList } from "react-native-gesture-handler";
 const Browse = () => {
   const { signOut } = useAuth();
 
@@ -30,7 +30,7 @@ const Browse = () => {
     if (data?.length >= 5 && !isPro) {
       // go pro dialog
     } else {
-      router.push("/browse/new-proejct");
+      router.push("/browse/new-project");
     }
   };
 
@@ -44,8 +44,9 @@ const Browse = () => {
           </TouchableOpacity>
         </View>
 
-        <FlatList
+        <Animated.FlatList
           data={data}
+          itemLayoutAnimation={LinearTransition}
           renderItem={({ item }) => (
             <ContextMenu.Root key={item.id}>
               <ContextMenu.Trigger>
@@ -54,6 +55,20 @@ const Browse = () => {
                   <Text style={styles.projectButtonText}>{item.name}</Text>
                 </TouchableOpacity>
               </ContextMenu.Trigger>
+              <ContextMenu.Content>
+                <ContextMenu.Item
+                  key="delete"
+                  onSelect={() => onDeleteProject(item.id)}
+                >
+                  <ContextMenu.ItemTitle>Delete</ContextMenu.ItemTitle>
+                  <ContextMenu.ItemIcon
+                    ios={{
+                      name: "trash",
+                      pointSize: 18,
+                    }}
+                  />
+                </ContextMenu.Item>
+              </ContextMenu.Content>
             </ContextMenu.Root>
           )}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
