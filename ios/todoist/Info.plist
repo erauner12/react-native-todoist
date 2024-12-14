@@ -27,7 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>myapp</string>
+          <string>syketbtodo</string>
           <string>com.anonymous.todoist</string>
         </array>
       </dict>

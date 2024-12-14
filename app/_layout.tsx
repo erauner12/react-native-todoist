@@ -5,13 +5,12 @@ import { tokenCache } from "@/utils/cache";
 import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { drizzle } from "drizzle-orm/expo-sqlite";
 import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
-import { router, Stack, usePathname, useSegments } from "expo-router";
-import { openDatabaseSync, SQLiteProvider } from "expo-sqlite";
+import { Stack, router, usePathname, useSegments } from "expo-router";
+import { SQLiteProvider, openDatabaseSync } from "expo-sqlite";
 import { Suspense, useEffect } from "react";
 import { ActivityIndicator, LogBox, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Toaster } from "sonner-native";
-
 LogBox.ignoreLogs(["Clerk: Clerk has been laoded with development keys"]);
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
@@ -62,7 +61,7 @@ const InitialLayout = () => {
 };
 
 export default function RootLayout() {
-  const expoDb = openDatabaseSync("todos.db");
+  const expoDb = openDatabaseSync("todos");
   const db = drizzle(expoDb);
   const { success, error } = useMigrations(db, migrations);
 
@@ -75,7 +74,11 @@ export default function RootLayout() {
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
       <ClerkLoaded>
         <Suspense fallback={<Loading />}>
-          <SQLiteProvider databaseName="todos" useSuspense>
+          <SQLiteProvider
+            databaseName="todos"
+            useSuspense
+            options={{ enableChangeListener: true }}
+          >
             <GestureHandlerRootView style={{ flex: 1 }}>
               <Toaster />
               <InitialLayout />
