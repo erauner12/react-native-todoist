@@ -4,10 +4,13 @@ import { ScrollView } from "react-native-gesture-handler";
 const Search = () => {
   return (
     <>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <ScrollView
+        contentContainerStyle={{ flex: 1, marginBottom: 285 }}
+        contentInsetAdjustmentBehavior="automatic"
+      >
         <Text>Search</Text>
+        <Fab />
       </ScrollView>
-      <Fab />
     </>
   );
 };
