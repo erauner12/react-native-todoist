@@ -77,9 +77,9 @@ const TodoForm = ({ todo }: TodoFormProps) => {
   useEffect(() => {
     if (!todo?.project_id) {
       setSelectedProject({
-        id: 1,
+        id: data[0]?.id,
         name: data[0]?.name,
-        color: "#000",
+        color: data[0]?.color,
       });
     }
   }, [todo, data]);
