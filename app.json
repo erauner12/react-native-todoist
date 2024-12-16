@@ -25,6 +25,27 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-dynamic-app-icon",
+        {
+          "default": {
+            "image": "./assets/images/icon.png",
+            "prerendered": true
+          },
+          "dark": {
+            "image": "./assets/images/icon-dark.png",
+            "prerendered": true
+          },
+          "green": {
+            "image": "./assets/images/icon-green.png",
+            "prerendered": true
+          },
+          "blue": {
+            "image": "./assets/images/icon-blue.png",
+            "prerendered": true
+          }
+        }
+      ],
       "expo-router",
       "react-native-bottom-tabs",
       [
@@ -50,7 +71,8 @@
           "launchMode": "most-recent"
         }
       ],
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-dynamic-app-icon"
     ],
     "experiments": {
       "typedRoutes": true

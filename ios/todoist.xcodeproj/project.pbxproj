@@ -11,11 +11,19 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1843FF5956034B65835B7132 /* default-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0E1600315E43F09740EB86 /* default-Icon-60x60@2x.png */; };
+		223BB57C80FB477B9DF47A09 /* dark-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A19D8982AF5947B7B8816DAF /* dark-Icon-60x60@3x.png */; };
+		2D002341E69148FDA3E2A56F /* blue-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0D3957F54364968A1BDAFB2 /* blue-Icon-60x60@2x.png */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		C4F945C370494C4F84DA0914 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37429A9879FD4605AE242306 /* noop-file.swift */; };
 		EEF6F46189107397C20255A6 /* Pods_todoist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF60F34700B715E3A61EDD1 /* Pods_todoist.framework */; };
+		F5FD49F947514F29B833CFA8 /* default-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C02290BD4DC481994CD2DA6 /* default-Icon-60x60@3x.png */; };
+		F7CDDFE8354A4EE9BC2D3579 /* dark-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BACA5924685E4CF0B1F03574 /* dark-Icon-60x60@2x.png */; };
+		F8D5318DFFA14EEBBE337092 /* green-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 729745E952DE48FD9337D12D /* green-Icon-60x60@2x.png */; };
+		FA9AC8AD8E984447B52F19A9 /* green-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92CF41012D4940B0EC631F /* green-Icon-60x60@3x.png */; };
+		FFD8C8430A7F4984907D7F7D /* blue-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545A11D2FDB74728940E0F00 /* blue-Icon-60x60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +33,20 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = todoist/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = todoist/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = todoist/main.m; sourceTree = "<group>"; };
+		1C0E1600315E43F09740EB86 /* default-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@2x.png"; path = "todoist/DynamicAppIcons/default-Icon-60x60@2x.png"; sourceTree = "<group>"; };
 		37429A9879FD4605AE242306 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "todoist/noop-file.swift"; sourceTree = "<group>"; };
 		374D1436575FFE118ACE6510 /* Pods-todoist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoist.debug.xcconfig"; path = "Target Support Files/Pods-todoist/Pods-todoist.debug.xcconfig"; sourceTree = "<group>"; };
+		3F92CF41012D4940B0EC631F /* green-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "green-Icon-60x60@3x.png"; path = "todoist/DynamicAppIcons/green-Icon-60x60@3x.png"; sourceTree = "<group>"; };
+		545A11D2FDB74728940E0F00 /* blue-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@3x.png"; path = "todoist/DynamicAppIcons/blue-Icon-60x60@3x.png"; sourceTree = "<group>"; };
 		61A40946D5AD13E15BE9EF79 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = todoist/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6F95FDD5E3D888C12C3C93F0 /* Pods-todoist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoist.release.xcconfig"; path = "Target Support Files/Pods-todoist/Pods-todoist.release.xcconfig"; sourceTree = "<group>"; };
 		72501BEAF8BE4382857B14A7 /* todoist-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "todoist-Bridging-Header.h"; path = "todoist/todoist-Bridging-Header.h"; sourceTree = "<group>"; };
+		729745E952DE48FD9337D12D /* green-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "green-Icon-60x60@2x.png"; path = "todoist/DynamicAppIcons/green-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		7C02290BD4DC481994CD2DA6 /* default-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@3x.png"; path = "todoist/DynamicAppIcons/default-Icon-60x60@3x.png"; sourceTree = "<group>"; };
+		A19D8982AF5947B7B8816DAF /* dark-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "dark-Icon-60x60@3x.png"; path = "todoist/DynamicAppIcons/dark-Icon-60x60@3x.png"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = todoist/SplashScreen.storyboard; sourceTree = "<group>"; };
+		B0D3957F54364968A1BDAFB2 /* blue-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@2x.png"; path = "todoist/DynamicAppIcons/blue-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		BACA5924685E4CF0B1F03574 /* dark-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "dark-Icon-60x60@2x.png"; path = "todoist/DynamicAppIcons/dark-Icon-60x60@2x.png"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		DCF60F34700B715E3A61EDD1 /* Pods_todoist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todoist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -62,6 +78,7 @@
 				37429A9879FD4605AE242306 /* noop-file.swift */,
 				72501BEAF8BE4382857B14A7 /* todoist-Bridging-Header.h */,
 				61A40946D5AD13E15BE9EF79 /* PrivacyInfo.xcprivacy */,
+				806D579150FF47F687C21AFE /* DynamicAppIcons */,
 			);
 			name = todoist;
 			sourceTree = "<group>";
@@ -73,6 +90,22 @@
 				DCF60F34700B715E3A61EDD1 /* Pods_todoist.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		806D579150FF47F687C21AFE /* DynamicAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				1C0E1600315E43F09740EB86 /* default-Icon-60x60@2x.png */,
+				7C02290BD4DC481994CD2DA6 /* default-Icon-60x60@3x.png */,
+				BACA5924685E4CF0B1F03574 /* dark-Icon-60x60@2x.png */,
+				A19D8982AF5947B7B8816DAF /* dark-Icon-60x60@3x.png */,
+				729745E952DE48FD9337D12D /* green-Icon-60x60@2x.png */,
+				3F92CF41012D4940B0EC631F /* green-Icon-60x60@3x.png */,
+				B0D3957F54364968A1BDAFB2 /* blue-Icon-60x60@2x.png */,
+				545A11D2FDB74728940E0F00 /* blue-Icon-60x60@3x.png */,
+			);
+			name = DynamicAppIcons;
+			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -204,6 +237,14 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				03C278A4DDCC336AC99F4E5C /* PrivacyInfo.xcprivacy in Resources */,
+				1843FF5956034B65835B7132 /* default-Icon-60x60@2x.png in Resources */,
+				F5FD49F947514F29B833CFA8 /* default-Icon-60x60@3x.png in Resources */,
+				F7CDDFE8354A4EE9BC2D3579 /* dark-Icon-60x60@2x.png in Resources */,
+				223BB57C80FB477B9DF47A09 /* dark-Icon-60x60@3x.png in Resources */,
+				F8D5318DFFA14EEBBE337092 /* green-Icon-60x60@2x.png in Resources */,
+				FA9AC8AD8E984447B52F19A9 /* green-Icon-60x60@3x.png in Resources */,
+				2D002341E69148FDA3E2A56F /* blue-Icon-60x60@2x.png in Resources */,
+				FFD8C8430A7F4984907D7F7D /* blue-Icon-60x60@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +408,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anonymous.todoist;
-				PRODUCT_NAME = "todoist";
+				PRODUCT_NAME = todoist;
 				SWIFT_OBJC_BRIDGING_HEADER = "todoist/todoist-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -395,7 +436,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anonymous.todoist;
-				PRODUCT_NAME = "todoist";
+				PRODUCT_NAME = todoist;
 				SWIFT_OBJC_BRIDGING_HEADER = "todoist/todoist-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,8 +1,8 @@
 import { Colors } from "@/constants/Colors";
 import { useUser } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
-import { Link, Stack } from "expo-router";
-import { Image, StyleSheet } from "react-native";
+import { Link, router, Stack } from "expo-router";
+import { Button, Image, StyleSheet } from "react-native";
 
 const BrowseLayout = () => {
   return (
@@ -27,6 +27,21 @@ const BrowseLayout = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="settings"
+        options={{
+          presentation: "modal",
+          headerTitle: "Settings",
+          headerTransparent: true,
+          headerRight: () => (
+            <Button
+              color={Colors.primary}
+              title="Done"
+              onPress={() => router.dismiss()}
+            />
+          ),
+        }}
+      />
     </Stack>
   );
 };
@@ -38,7 +53,7 @@ const HeaderLeft = () => {
 
 const HeaderRight = () => {
   return (
-    <Link href="/">
+    <Link href="/browse/settings">
       <Ionicons name="settings-outline" size={24} color={Colors.primary} />
     </Link>
   );
