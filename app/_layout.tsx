@@ -1,6 +1,6 @@
 import { Colors } from "@/constants/Colors";
 import migrations from "@/drizzle/migrations";
-import { addDummyData } from "@/utils/addDummyData";
+// import { addDummyData } from "@/utils/addDummyData"; // Removed
 import { tokenCache } from "@/utils/cache";
 import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { drizzle } from "drizzle-orm/expo-sqlite";
@@ -11,14 +11,12 @@ import { Suspense, useEffect } from "react";
 import { ActivityIndicator, LogBox, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Toaster } from "sonner-native";
+
 LogBox.ignoreLogs(["Clerk: Clerk has been laoded with development keys"]);
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-
 if (!publishableKey) {
-  throw new Error(
-    "Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env"
-  );
+  throw new Error("Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env");
 }
 
 const InitialLayout = () => {
@@ -28,9 +26,7 @@ const InitialLayout = () => {
 
   useEffect(() => {
     if (!isLoaded) return;
-
     const isAuthGroup = segments[0] === "(authenticated)";
-
     if (isSignedIn && !isAuthGroup) {
       router.replace("/(authenticated)/(tabs)/today");
     } else if (!isSignedIn && pathname !== "/") {
@@ -40,14 +36,11 @@ const InitialLayout = () => {
 
   if (!isLoaded) {
     return (
-      <View
-        style={{ flex: 1, justifyContent: "center", alignContent: "center" }}
-      >
+      <View style={{ flex: 1, justifyContent: "center", alignContent: "center" }}>
         <ActivityIndicator size="large" color={Colors.primary} />
       </View>
     );
   }
-
   return (
     <Stack
       screenOptions={{
@@ -65,10 +58,12 @@ export default function RootLayout() {
   const db = drizzle(expoDb);
   const { success, error } = useMigrations(db, migrations);
 
-  useEffect(() => {
-    if (!success) return;
-    addDummyData(db);
-  }, [success]);
+  // We no longer seed dummy data:
+  // useEffect(() => {
+  //   if (success) {
+  //     addDummyData(db);
+  //   }
+  // }, [success]);
 
   return (
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
